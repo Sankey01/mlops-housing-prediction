@@ -1,10 +1,8 @@
-version: '3.8'
-
 services:
   # Servicio principal de la API
   housing-api:
     build:
-      context: docker
+      context: .
       dockerfile: Dockerfile
     image: housing-prediction-api:latest
     container_name: housing-api-container
@@ -15,10 +13,11 @@ services:
       - ./logs:/app/logs
       # Montar modelos (útil para desarrollo)
       - ./models:/app/models:ro
+    env_file:
+      - .env.docker
     environment:
+      # Variables adicionales específicas para Docker
       - ENVIRONMENT=docker
-      - LOG_LEVEL=info
-      - WORKERS=1
     healthcheck:
       test: ["CMD", "./healthcheck.sh"]
       interval: 30s
