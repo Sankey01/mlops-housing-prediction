@@ -86,13 +86,11 @@ trap cleanup SIGTERM SIGINT
 log "Iniciando servidor Uvicorn..."
 log "=========================================="
 
-# Ejecutar servidor con configuración optimizada para producción
+# Ejecutar servidor con configuración básica (sin uvloop)
 exec uvicorn src.api.main:app \
     --host "$HOST" \
     --port "$PORT" \
     --workers "$WORKERS" \
     --log-level "$LOG_LEVEL" \
     --no-use-colors \
-    --access-log \
-    --loop uvloop \
-    --http httptools
+    --access-log
