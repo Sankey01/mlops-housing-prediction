@@ -54,8 +54,6 @@ class HousingPriceTrainer:
         self.best_model = None
         self.scaler = None
         self.feature_names = None
-
-        # Crear directorios si no existen
         self.create_directories()
 
     def create_directories(self):
@@ -111,7 +109,7 @@ class HousingPriceTrainer:
         self.feature_names = list(X.columns)
         logger.info(f"Features identificadas: {len(self.feature_names)} variables")
 
-        # Detectar outliers usando método IQR
+        # Detectar outliers usando método IQR.
         Q1 = y.quantile(0.25)
         Q3 = y.quantile(0.75)
         IQR = Q3 - Q1
@@ -406,7 +404,7 @@ class HousingPriceTrainer:
         joblib.dump(model_package, model_path)
 
         # Guardar metadatos por separado para facilitar acceso
-        with open('models/model_metadata.json', 'w') as f:
+        with open(r'C:\Users\Kenny\PycharmProjects\mlops-housing-prediction\models\model_metadata.json', 'w') as f:
             json.dump(model_metadata, f, indent=2)
 
         logger.info("Modelo guardado exitosamente")
@@ -476,7 +474,7 @@ def main():
     parser = argparse.ArgumentParser(description='Pipeline de Entrenamiento - Boston Housing')
     parser.add_argument('--data-url', type=str, help='URL del dataset')
     parser.add_argument('--random-state', type=int, default=42, help='Semilla aleatoria para reproducibilidad')
-    parser.add_argument('--model-path', type=str, default='models/best_model.pkl', help='Ruta para guardar el modelo')
+    parser.add_argument('--model-path', type=str, default='C:/Users/Kenny/PycharmProjects/mlops-housing-prediction/models/best_model.pkl', help='Ruta para guardar el modelo')
 
     args = parser.parse_args()
 
