@@ -683,14 +683,8 @@ mypy src/
 
 ## 📄 Licencia
 
-Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
-
-## 📞 Soporte
-
-- **Issues**: [GitHub Issues](https://github.com/tu-usuario/mlops-housing-prediction/issues)
-- **Documentación**: [Wiki del proyecto](https://github.com/tu-usuario/mlops-housing-prediction/wiki)
-- **Email**: tu-email@example.com
+- **Email**: forerojaramillo2009@gmail.com
 
 ---
 
-**Hecho con ❤️ por [Tu Nombre]**
+**[kenshi]**
